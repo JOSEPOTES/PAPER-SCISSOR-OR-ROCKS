@@ -1,11 +1,13 @@
 import random
 from termcolor import colored
+import os
 def operation(user_name):
     empate = 0
     victorias = 0
     derrotas = 0
     print(f" {user_name.capitalize()} Escribe cuando quieras " +  colored('salir','yellow',attrs=['bold']) + " y terminamos el juego ")
     pasar = input(" Presiona " + colored('ENTER',"green",attrs=['bold']) + " para continuar: ")
+    os.system("cls")
     while True:
         options = ["Piedra","Papel","Tijera"]
         user_choose = input("Escribe una opcion: ").capitalize()
@@ -38,6 +40,11 @@ def operation(user_name):
             print(f"Haz ganado {victorias} en este juego")
             salir = input(" Escribe " + colored('salir','yellow',attrs=["bold"]) + " y terminamos el juego: ").lower()
             if salir == "salir":
+                print(f"""few, eso estuvo bueno. Aqui te muestro el resumen de nuestras partidas: 
+            empates:{empate}
+            victorias: {victorias}
+            derrotas: {derrotas}
+            hasta pronto {user_name.capitalize()}""")
                 break
             else:
                 continue
